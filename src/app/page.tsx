@@ -131,10 +131,11 @@ export default function Home() {
     .filter((p): p is Product => Boolean(p));
 
   return (
-    <div style={{ maxWidth: 1280, margin: "0 auto", padding: 32, background: '#fff', minHeight: '100vh', fontFamily: 'Inter, Roboto, Arial, sans-serif', borderRadius: 18, boxShadow: '0 2px 24px 0 rgba(0,0,0,0.06)', position: 'relative' }}>
-      <Title level={2} style={{ textAlign: "center", marginBottom: 32, fontWeight: 800, letterSpacing: 1 }}>
-        Sàn giáo dục thương mại điện tử
-      </Title>
+    <div style={{ maxWidth: 1280, margin: "0 auto", padding: 32, background: '#f5f5f5', minHeight: '100vh', fontFamily: 'Inter, Roboto, Arial, sans-serif', position: 'relative' }}>
+      <div style={{ background: '#fff', padding: 32, borderRadius: 18, boxShadow: '0 2px 24px 0 rgba(0,0,0,0.06)', marginBottom: 24 }}>
+        <Title level={2} style={{ textAlign: "center", marginBottom: 32, fontWeight: 800, letterSpacing: 1, color: '#1677ff' }}>
+          Sàn giáo dục thương mại điện tử
+        </Title>
       <Row gutter={[16, 16]} align="middle" style={{ marginBottom: 24 }}>
         <Col xs={24} sm={16} md={12}>
           <SearchBar value={search} onChange={setSearch} />
@@ -209,6 +210,7 @@ export default function Home() {
         <MessageOutlined />
       </button>
       {showChatbot && <ChatbotAI />}
+      </div>
     </div>
   );
 }

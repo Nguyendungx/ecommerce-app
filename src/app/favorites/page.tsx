@@ -40,7 +40,7 @@ export default function FavoritesPage() {
     // Nếu không có query, lấy từ localStorage
     const fav = localStorage.getItem("favorites");
     if (fav) setFavorites(JSON.parse(fav));
-  }, []);
+  }, [searchParams]);
 
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
