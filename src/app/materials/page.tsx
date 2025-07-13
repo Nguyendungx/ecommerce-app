@@ -1,7 +1,6 @@
- 
 "use client";
 import React, { useState, useEffect, useCallback } from 'react';
-import { Row, Col, Typography, Input, Select, Spin, message } from 'antd';
+import { Typography, Input, Select, Spin, message } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import mockMaterials, { Material } from '../../api/mockMaterials';
 import MaterialCard from '@/components/MaterialCard';
@@ -19,7 +18,8 @@ export default function MaterialsPage() {
   const [selectedFormat, setSelectedFormat] = useState<string>('all');
   const [priceFilter, setPriceFilter] = useState<string>('all');
 
-  const categories = ['all', 'Frontend', 'Backend', 'Data Science', 'DevOps', 'Mobile'];
+  // Đổi danh mục cho phù hợp chủ đề ngôn ngữ
+  const categories = ['all', 'Tiếng Anh', 'IELTS', 'TOEIC', 'Tiếng Nhật', 'Tiếng Hàn', 'Tiếng Trung'];
   const formats = ['all', 'pdf', 'doc', 'ppt', 'video'];
   const priceFilters = ['all', 'free', 'paid'];
 
@@ -88,28 +88,29 @@ export default function MaterialsPage() {
   };
 
   return (
-    <div style={{ maxWidth: 1280, margin: '0 auto', padding: '24px', background: '#f5f5f5', minHeight: '100vh' }}>
-      <Title level={2} style={{ textAlign: 'center', marginBottom: '32px', color: '#1677ff' }}>
-        Tài Liệu Học Tập
+    <div>
+      <Title level={2} className="text-center mb-8 font-extrabold tracking-wide text-blue-600 text-2xl md:text-4xl">
+        Tài liệu học ngôn ngữ & luyện thi
       </Title>
       {/* Filters */}
-      <div style={{ background: '#fff', padding: '24px', borderRadius: '8px', marginBottom: '24px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
-        <Row gutter={[16, 16]} align="middle">
-          <Col xs={24} sm={12} md={6}>
+      <div className="bg-white rounded-xl shadow p-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+          <div>
             <Search
               placeholder="Tìm kiếm tài liệu..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               prefix={<SearchOutlined />}
               size="large"
+              className="w-full"
             />
-          </Col>
-          <Col xs={24} sm={12} md={4}>
+          </div>
+          <div>
             <Select
               placeholder="Danh mục"
               value={selectedCategory}
               onChange={setSelectedCategory}
-              style={{ width: '100%' }}
+              className="w-full"
               size="large"
             >
               {categories.map(category => (
@@ -118,13 +119,13 @@ export default function MaterialsPage() {
                 </Option>
               ))}
             </Select>
-          </Col>
-          <Col xs={24} sm={12} md={4}>
+          </div>
+          <div>
             <Select
               placeholder="Định dạng"
               value={selectedFormat}
               onChange={setSelectedFormat}
-              style={{ width: '100%' }}
+              className="w-full"
               size="large"
             >
               {formats.map(format => (
@@ -133,13 +134,13 @@ export default function MaterialsPage() {
                 </Option>
               ))}
             </Select>
-          </Col>
-          <Col xs={24} sm={12} md={4}>
+          </div>
+          <div>
             <Select
               placeholder="Giá"
               value={priceFilter}
               onChange={setPriceFilter}
-              style={{ width: '100%' }}
+              className="w-full"
               size="large"
             >
               {priceFilters.map(filter => (
@@ -148,33 +149,32 @@ export default function MaterialsPage() {
                 </Option>
               ))}
             </Select>
-          </Col>
-          <Col xs={24} sm={12} md={6}>
-            <Text strong>
+          </div>
+          <div>
+            <Text strong className="block text-right md:text-left">
               Tìm thấy {filteredMaterials.length} tài liệu
             </Text>
-          </Col>
-        </Row>
+          </div>
+        </div>
       </div>
       {/* Materials Grid */}
       {loading ? (
-        <div style={{ textAlign: 'center', padding: '50px' }}>
+        <div className="text-center py-20">
           <Spin size="large" />
         </div>
       ) : (
-        <Row gutter={[24, 24]}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredMaterials.map(material => (
-            <Col xs={24} sm={12} lg={8} key={material.id}>
-              <MaterialCard
-                material={material}
-                onDownload={handleDownload}
-                formatPrice={formatPrice}
-                getFormatColor={getFormatColor}
-                getFormatText={getFormatText}
-              />
-            </Col>
+            <MaterialCard
+              key={material.id}
+              material={material}
+              onDownload={handleDownload}
+              formatPrice={formatPrice}
+              getFormatColor={getFormatColor}
+              getFormatText={getFormatText}
+            />
           ))}
-        </Row>
+        </div>
       )}
     </div>
   );

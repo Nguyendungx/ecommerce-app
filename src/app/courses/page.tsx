@@ -72,7 +72,7 @@ export default function CoursesPage() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8 bg-gray-50 min-h-screen">
+    <div >
       <Title level={2} className="text-center mb-8 text-blue-600 font-bold text-3xl md:text-4xl">
         Các Khóa Học
       </Title>

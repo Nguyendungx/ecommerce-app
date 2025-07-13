@@ -12,7 +12,7 @@ export default function PostsPage() {
   const router = useRouter();
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8 bg-gray-50 min-h-screen">
+    <div >
       <Title level={2} className="text-center mb-8 text-blue-600 font-bold text-3xl md:text-4xl">
         Bài Viết
       </Title>
@@ -30,7 +30,7 @@ export default function PostsPage() {
               />
             }
             className="transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl cursor-pointer rounded-xl"
-            bodyStyle={{ padding: 20 }}
+            styles={{ body: { padding: 20 } }}
           >
             <div className="flex flex-wrap gap-2 mb-2">
               <Tag color="blue">{post.author}</Tag>

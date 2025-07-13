@@ -9,7 +9,7 @@ import SuggestionButton from "../components/SuggestionButton";
 import ProductDetailModal from "../components/ProductDetailModal";
 import ViewedHistory from "../components/ViewedHistory";
 import LoadingSkeleton from "../components/LoadingSkeleton";
-import { Spin, Typography, message, Row, Col, Divider, Button } from "antd";
+import { Spin, Typography, Divider, Button, message } from "antd";
 import { HeartFilled } from '@ant-design/icons';
 import { useRouter } from 'next/navigation';
 import '@ant-design/v5-patch-for-react-19';
@@ -131,85 +131,68 @@ export default function Home() {
     .filter((p): p is Product => Boolean(p));
 
   return (
-    <div style={{ maxWidth: 1280, margin: "0 auto", padding: 32, background: '#f5f5f5', minHeight: '100vh', fontFamily: 'Inter, Roboto, Arial, sans-serif', position: 'relative' }}>
-      <div style={{ background: '#fff', padding: 32, borderRadius: 18, boxShadow: '0 2px 24px 0 rgba(0,0,0,0.06)', marginBottom: 24 }}>
-        <Title level={2} style={{ textAlign: "center", marginBottom: 32, fontWeight: 800, letterSpacing: 1, color: '#1677ff' }}>
-          Sàn giáo dục thương mại điện tử
+    <div className="max-w-7xl mx-auto px-4  bg--50 min-h-screen font-sans relative">
+      <div className="bg-white p-6 md:p-10 rounded-2xl shadow-lg mb-8">
+        <Title level={2} className="text-center mb-8 font-extrabold tracking-wide text-green-600 text-2xl md:text-4xl">
+          Sàn thương mại các khoá học & tài liệu ngôn ngữ
         </Title>
-      <Row gutter={[16, 16]} align="middle" style={{ marginBottom: 24 }}>
-        <Col xs={24} sm={16} md={12}>
-          <SearchBar value={search} onChange={setSearch} />
-          <PriceFilter value={priceRange} onChange={setPriceRange} />
-        </Col>
-        <Col xs={24} sm={8} md={12} style={{ textAlign: 'right', marginTop: 12 }}>
-          <SuggestionButton loading={suggestLoading} onClick={handleSuggest} />
-          <Button
-            type="default"
-            icon={<HeartFilled style={{ color: '#f5222d' }} />}
-            size="large"
-            style={{ marginLeft: 16 }}
-            onClick={() => router.push(`/favorites?favs=${encodeURIComponent(JSON.stringify(favorites))}`)}
-          >
-            Sản phẩm yêu thích
-          </Button>
-        </Col>
-      </Row>
-      <Divider />
-      {showSuggestion ? (
-        suggestLoading ? (
-          <LoadingSkeleton />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center mb-6">
+          <div className="md:col-span-2">
+            <SearchBar value={search} onChange={setSearch} />
+            <PriceFilter value={priceRange} onChange={setPriceRange} />
+          </div>
+          <div className="flex flex-col md:flex-row md:justify-end gap-2 md:gap-0 md:items-center mt-2 md:mt-0">
+            <SuggestionButton loading={suggestLoading} onClick={handleSuggest} />
+            <Button
+              type="default"
+              icon={<HeartFilled style={{ color: '#f5222d' }} />}
+              size="large"
+              className="md:ml-4"
+              onClick={() => router.push(`/favorites?favs=${encodeURIComponent(JSON.stringify(favorites))}`)}
+            >
+              Sản phẩm yêu thích
+            </Button>
+          </div>
+        </div>
+        <Divider />
+        {showSuggestion ? (
+          suggestLoading ? (
+            <LoadingSkeleton />
+          ) : (
+            <ProductList
+              products={suggested}
+              favorites={favorites}
+              onViewDetail={handleViewDetail}
+              onToggleFavorite={handleToggleFavorite}
+            />
+          )
+        ) : loading ? (
+          <div className="text-center py-20">
+            <Spin size="large" />
+          </div>
         ) : (
           <ProductList
-            products={suggested}
+            products={filteredProducts}
             favorites={favorites}
             onViewDetail={handleViewDetail}
             onToggleFavorite={handleToggleFavorite}
           />
-        )
-      ) : loading ? (
-        <div style={{ textAlign: "center", marginTop: 80 }}>
-          <Spin size="large" />
-        </div>
-      ) : (
-        <ProductList
-          products={filteredProducts}
-          favorites={favorites}
-          onViewDetail={handleViewDetail}
-          onToggleFavorite={handleToggleFavorite}
+        )}
+        <ProductDetailModal
+          open={modalOpen}
+          onClose={handleCloseModal}
+          product={selectedProduct ?? undefined}
         />
-      )}
-      <ProductDetailModal
-        open={modalOpen}
-        onClose={handleCloseModal}
-        product={selectedProduct ?? undefined}
-      />
-      <ViewedHistory products={viewedProducts} onViewDetail={handleViewDetail} />
-      {/* Nút mở/đóng chatbot */}
-      <button
-        onClick={() => setShowChatbot((v) => !v)}
-        style={{
-          position: 'fixed',
-          bottom: 10,
-          right: 10,
-          zIndex: 1100,
-          width: 46,
-          height: 46,
-          borderRadius: '50%',
-          background: '#1677ff',
-          color: '#fff',
-          border: 'none',
-          boxShadow: '0 4px 16px 0 rgba(22,119,255,0.18)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: 28,
-          cursor: 'pointer',
-        }}
-        aria-label={showChatbot ? 'Đóng chatbot' : 'Mở chatbot'}
-      >
-        <MessageOutlined />
-      </button>
-      {showChatbot && <ChatbotAI />}
+        <ViewedHistory products={viewedProducts} onViewDetail={handleViewDetail} />
+        {/* Nút mở/đóng chatbot */}
+        <button
+          onClick={() => setShowChatbot((v) => !v)}
+          className="fixed bottom-3 right-3 z-[1100] w-12 h-12 rounded-full bg-blue-600 text-white shadow-lg flex items-center justify-center text-2xl cursor-pointer"
+          aria-label={showChatbot ? 'Đóng chatbot' : 'Mở chatbot'}
+        >
+          <MessageOutlined />
+        </button>
+        {showChatbot && <ChatbotAI />}
       </div>
     </div>
   );

@@ -100,7 +100,7 @@ const Header: React.FC = () => {
   return (
     <AntHeader 
       style={{ 
-        background: '#fff', 
+        background: '#f5f6fa', // màu xám nhẹ
         padding: screens.xs ? '0 12px' : '0 24px',
         boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
         position: 'sticky',
@@ -112,44 +112,33 @@ const Header: React.FC = () => {
         height: 64
       }}
     >
-      <div style={{ display: 'flex', alignItems: 'center', flex: 1 }}>
-        <Link href="/" style={{ textDecoration: 'none' }}>
-          <div style={{ 
-            fontSize: screens.xs ? '20px' : '24px', 
-            fontWeight: 'bold', 
-            color: '#1677ff',
-            marginRight: screens.xs ? 16 : 48
-          }}>
-            EduStore
-          </div>
+      <div className="flex items-center flex-1">
+        <Link href="/" className="no-underline">
+          <div className="font-bold text-primary mr-4 md:mr-12 text-[20px] md:text-[24px]">EduStore</div>
         </Link>
         {/* Desktop menu */}
-        {!screens.xs && (
+        <div className="hidden xs:hidden sm:block flex-1">
           <Menu
             mode="horizontal"
             selectedKeys={[current]}
             items={menuItems}
             onClick={handleMenuClick}
-            style={{ 
-              background: 'transparent',
-              border: 'none',
-              flex: 1
-            }}
+            style={{ background: 'transparent', border: 'none', flex: 1 }}
           />
-        )}
+        </div>
       </div>
       {/* Mobile hamburger */}
-      {screens.xs && (
+      <div className="block xs:block sm:hidden ml-2">
         <Button
           type="text"
           icon={
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1677ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
           }
           onClick={() => setDrawerOpen(true)}
-          style={{ marginLeft: 8 }}
           aria-label="Mở menu"
+          className="!ml-2"
         />
-      )}
+      </div>
       {/* User menu */}
       <Dropdown
         menu={{
@@ -160,7 +149,7 @@ const Header: React.FC = () => {
       >
         <Avatar 
           size={screens.xs ? 32 : 40} 
-          style={{ cursor: 'pointer', marginLeft: 16 }}
+          className="cursor-pointer ml-4"
         >U</Avatar>
       </Dropdown>
       {/* Drawer cho mobile menu */}

@@ -1,9 +1,7 @@
- 
 "use client";
 import React, { useState, useEffect, useCallback } from 'react';
-import { Row, Col, Typography, Input, Select } from 'antd';
+import { Typography, Input, Select, Spin, message } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
-import { Spin, message } from 'antd';
 import mockEvents, { Event } from '../../api/mockEvents';
 import EventCard from '../../components/EventCard';
 
@@ -20,8 +18,9 @@ export default function EventsPage() {
   const [selectedType, setSelectedType] = useState<string>('all');
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
 
-  const categories = ['all', 'Frontend', 'Backend', 'Mobile', 'DevOps', 'AI/ML', 'Web Development'];
-  const types = ['all', 'online', 'offline', 'hybrid'];
+  // Đổi danh mục cho phù hợp chủ đề ngôn ngữ
+  const categories = ['all', 'Tiếng Anh', 'IELTS', 'TOEIC', 'Tiếng Nhật', 'Tiếng Hàn', 'Tiếng Trung'];
+  const types = ['all', 'online', 'offline'];
   const statuses = ['all', 'upcoming', 'ongoing', 'completed', 'cancelled'];
 
   const filterEvents = useCallback(() => {
@@ -65,7 +64,6 @@ export default function EventsPage() {
     switch (type) {
       case 'online': return 'green';
       case 'offline': return 'blue';
-      case 'hybrid': return 'purple';
       default: return 'orange';
     }
   };
@@ -74,7 +72,6 @@ export default function EventsPage() {
     switch (type) {
       case 'online': return 'Trực tuyến';
       case 'offline': return 'Trực tiếp';
-      case 'hybrid': return 'Kết hợp';
       default: return type;
     }
   };
@@ -113,7 +110,6 @@ export default function EventsPage() {
       message.warning('Sự kiện đã đầy!');
       return;
     }
-    
     if (event.isFree) {
       message.success('Đăng ký thành công!');
     } else {
@@ -122,29 +118,29 @@ export default function EventsPage() {
   };
 
   return (
-    <div style={{ maxWidth: 1280, margin: '0 auto', padding: '24px', background: '#f5f5f5', minHeight: '100vh' }}>
-      <Title level={2} style={{ textAlign: 'center', marginBottom: '32px', color: '#1677ff' }}>
-        Sự Kiện
+    <div >
+      <Title level={2} className="text-center mb-8 font-extrabold tracking-wide text-blue-600 text-2xl md:text-4xl">
+        Sự kiện ngôn ngữ & luyện thi
       </Title>
-
       {/* Filters */}
-      <div style={{ background: '#fff', padding: '24px', borderRadius: '8px', marginBottom: '24px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
-        <Row gutter={[16, 16]} align="middle">
-          <Col xs={24} sm={12} md={6}>
+      <div className="bg-white rounded-xl shadow p-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+          <div>
             <Search
               placeholder="Tìm kiếm sự kiện..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               prefix={<SearchOutlined />}
               size="large"
+              className="w-full"
             />
-          </Col>
-          <Col xs={24} sm={12} md={4}>
+          </div>
+          <div>
             <Select
               placeholder="Danh mục"
               value={selectedCategory}
               onChange={setSelectedCategory}
-              style={{ width: '100%' }}
+              className="w-full"
               size="large"
             >
               {categories.map(category => (
@@ -153,13 +149,13 @@ export default function EventsPage() {
                 </Option>
               ))}
             </Select>
-          </Col>
-          <Col xs={24} sm={12} md={4}>
+          </div>
+          <div>
             <Select
               placeholder="Hình thức"
               value={selectedType}
               onChange={setSelectedType}
-              style={{ width: '100%' }}
+              className="w-full"
               size="large"
             >
               {types.map(type => (
@@ -168,13 +164,13 @@ export default function EventsPage() {
                 </Option>
               ))}
             </Select>
-          </Col>
-          <Col xs={24} sm={12} md={4}>
+          </div>
+          <div>
             <Select
               placeholder="Trạng thái"
               value={selectedStatus}
               onChange={setSelectedStatus}
-              style={{ width: '100%' }}
+              className="w-full"
               size="large"
             >
               {statuses.map(status => (
@@ -183,37 +179,35 @@ export default function EventsPage() {
                 </Option>
               ))}
             </Select>
-          </Col>
-          <Col xs={24} sm={12} md={6}>
-            <Text strong>
+          </div>
+          <div>
+            <Text strong className="block text-right md:text-left">
               Tìm thấy {filteredEvents.length} sự kiện
             </Text>
-          </Col>
-        </Row>
+          </div>
+        </div>
       </div>
-
       {/* Events Grid */}
       {loading ? (
-        <div style={{ textAlign: 'center', padding: '50px' }}>
+        <div className="text-center py-20">
           <Spin size="large" />
         </div>
       ) : (
-        <Row gutter={[24, 24]}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredEvents.map(event => (
-            <Col xs={24} sm={12} lg={8} key={event.id}>
-              <EventCard
-                event={event}
-                onRegister={handleRegister}
-                formatPrice={formatPrice}
-                getTypeColor={getTypeColor}
-                getTypeText={getTypeText}
-                getStatusColor={getStatusColor}
-                getStatusText={getStatusText}
-                formatDate={formatDate}
-              />
-            </Col>
+            <EventCard
+              key={event.id}
+              event={event}
+              onRegister={handleRegister}
+              formatPrice={formatPrice}
+              getTypeColor={getTypeColor}
+              getTypeText={getTypeText}
+              getStatusColor={getStatusColor}
+              getStatusText={getStatusText}
+              formatDate={formatDate}
+            />
           ))}
-        </Row>
+        </div>
       )}
     </div>
   );
