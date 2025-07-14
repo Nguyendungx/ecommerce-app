@@ -39,7 +39,7 @@ const mockCourses: Course[] = [
     duration: "30 giờ",
     level: "beginner",
     category: "Tiếng Anh",
-    image: "https://via.placeholder.com/300x200/1677ff/ffffff?text=English+Beginner",
+    image: "https://static.unica.vn/upload/images/2019/04/tieng-anh-giao-tiep-cho-nguoi-bat-dau-_1555572976.jpg",
     description: "Khoá học giúp bạn tự tin giao tiếp tiếng Anh trong cuộc sống hàng ngày với giáo viên bản ngữ và giáo trình hiện đại.",
     sections: [
       {
@@ -72,7 +72,7 @@ const mockCourses: Course[] = [
     duration: "40 giờ",
     level: "intermediate",
     category: "IELTS",
-    image: "https://via.placeholder.com/300x200/52c41a/ffffff?text=IELTS+6.5+",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvXOE5rJL_CwuctQf38arTI3cxJMoZHW3AeQ&s",
     description: "Chiến lược làm bài, luyện kỹ năng nghe, nói, đọc, viết và giải đề thi IELTS thực tế.",
     sections: [
       {
@@ -97,7 +97,7 @@ const mockCourses: Course[] = [
     duration: "35 giờ",
     level: "beginner",
     category: "Tiếng Nhật",
-    image: "https://via.placeholder.com/300x200/fa8c16/ffffff?text=Japanese+N5",
+    image: "https://tatosa.edu.vn/wp-content/uploads/2024/02/Chi%C3%AAu-sinh-l%E1%BB%9Bp-ti%E1%BA%BFng-Nh%E1%BA%ADt-N5.png",
     description: "Học bảng chữ cái, ngữ pháp, từ vựng và giao tiếp cơ bản tiếng Nhật cho người mới bắt đầu.",
     sections: [
       {
@@ -122,7 +122,7 @@ const mockCourses: Course[] = [
     duration: "28 giờ",
     level: "intermediate",
     category: "TOEIC",
-    image: "https://via.placeholder.com/300x200/722ed1/ffffff?text=TOEIC+700+",
+    image: "https://edusa.vn/wp-content/uploads/2023/03/edusa.webp",
     description: "Khoá luyện thi TOEIC với giáo viên giàu kinh nghiệm, luyện đề và mẹo đạt điểm cao."
   },
   {
@@ -136,7 +136,7 @@ const mockCourses: Course[] = [
     duration: "32 giờ",
     level: "beginner",
     category: "Tiếng Hàn",
-    image: "https://via.placeholder.com/300x200/eb2f96/ffffff?text=Korean+Beginner",
+    image: "https://hvcgroup.edu.vn/uploads/details/2021/03/images/hoc-tieng-han-giao-tiep.jpg",
     description: "Khoá học tiếng Hàn giao tiếp cơ bản, luyện phát âm, hội thoại thực tế với giáo viên bản xứ."
   },
   {
@@ -150,7 +150,7 @@ const mockCourses: Course[] = [
     duration: "36 giờ",
     level: "advanced",
     category: "Tiếng Trung",
-    image: "https://via.placeholder.com/300x200/13c2c2/ffffff?text=Chinese+Business",
+    image: "https://khoahoctiengtrung.com/wp-content/uploads/2021/08/tieng-trung-thuong-mai-.jpg",
     description: "Tiếng Trung ứng dụng trong kinh doanh, thương mại, đàm phán và giao tiếp công sở."
   }
 ];

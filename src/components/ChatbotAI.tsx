@@ -80,9 +80,11 @@ const ChatbotAI: React.FC = () => {
   return (
     <Card
       style={{ position: 'fixed', bottom: 32, right: 32, width: 370, maxHeight: 540, zIndex: 1000, boxShadow: '0 4px 24px 0 rgba(0,0,0,0.12)', borderRadius: 18, display: 'flex', flexDirection: 'column' }}
-      bodyStyle={{ padding: 0, display: 'flex', flexDirection: 'column', height: 500 }}
       title={<span><RobotOutlined /> Chatbot AI tư vấn sản phẩm</span>}
-      styles={{ header: { borderTopLeftRadius: 18, borderTopRightRadius: 18 } }}
+      styles={{
+        body: { padding: 0, display: 'flex', flexDirection: 'column', height: 500 },
+        header: { borderTopLeftRadius: 18, borderTopRightRadius: 18 }
+      }}
     >
       <div style={{ flex: 1, overflowY: 'auto', padding: 16, background: '#fafbfc' }}>
         <List

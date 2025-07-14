@@ -30,7 +30,7 @@ const mockMaterials: Material[] = [
     fileSize: "20MB",
     format: "pdf",
     category: "Tiếng Anh",
-    image: "https://via.placeholder.com/300x200/1677ff/ffffff?text=English+Book",
+    image: "https://benative.vn/wp-content/uploads/2019/02/giao-trinh-hoc-tieng-anh-giao-tiep-co-ban-2.png",
     description: "Giáo trình tiếng Anh giao tiếp cơ bản đến nâng cao, phù hợp cho mọi đối tượng.",
     isFree: true
   },
@@ -47,7 +47,7 @@ const mockMaterials: Material[] = [
     fileSize: "28MB",
     format: "pdf",
     category: "IELTS",
-    image: "https://via.placeholder.com/300x200/52c41a/ffffff?text=IELTS+Test",
+    image: "https://onthiielts.com.vn/wp-content/uploads/2019/09/bo-de-ielts-768x432.jpg",
     description: "Tổng hợp đề thi IELTS mới nhất, có đáp án và giải thích chi tiết.",
     isFree: false
   },
@@ -64,7 +64,7 @@ const mockMaterials: Material[] = [
     fileSize: "18MB",
     format: "pdf",
     category: "Tiếng Nhật",
-    image: "https://via.placeholder.com/300x200/fa8c16/ffffff?text=Japanese+Grammar",
+    image: "https://product.hstatic.net/1000075554/product/-n4-ngu-phap-va-doc-hieu-so-cap-in0qs_81c46e3d672d4f3d85a85d2422184a67_aa69d0040b414cfab9d61ab45a76ece3_master.gif",
     description: "Sách tổng hợp ngữ pháp, bài tập và ví dụ minh hoạ cho kỳ thi JLPT N5-N4.",
     isFree: false
   },
@@ -81,7 +81,7 @@ const mockMaterials: Material[] = [
     fileSize: "15MB",
     format: "pdf",
     category: "TOEIC",
-    image: "https://via.placeholder.com/300x200/722ed1/ffffff?text=TOEIC+Practice",
+    image: "https://edulife.com.vn/wp-content/uploads/2021/12/New-TOEIC-700.jpg",
     description: "Tài liệu luyện thi TOEIC, mẹo làm bài và đề thi thử cập nhật mới nhất.",
     isFree: true
   },
@@ -98,7 +98,7 @@ const mockMaterials: Material[] = [
     fileSize: "12MB",
     format: "pdf",
     category: "Tiếng Hàn",
-    image: "https://via.placeholder.com/300x200/eb2f96/ffffff?text=Korean+Listening",
+    image: "https://i.ytimg.com/vi/Bj6FA6wEKO4/maxresdefault.jpg",
     description: "Sách luyện nghe tiếng Hàn sơ cấp, bài tập thực hành và file audio kèm theo.",
     isFree: false
   },
@@ -115,7 +115,7 @@ const mockMaterials: Material[] = [
     fileSize: "16MB",
     format: "pdf",
     category: "Tiếng Trung",
-    image: "https://via.placeholder.com/300x200/13c2c2/ffffff?text=Chinese+Book",
+    image: "https://tiengtrungthuonghai.vn/wp-content/uploads/2023/01/sach-tieng-trung-thuong-mai.jpg",
     description: "Giáo trình tiếng Trung ứng dụng trong kinh doanh, hội thoại thương mại thực tế.",
     isFree: true
   }

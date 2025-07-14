@@ -59,7 +59,7 @@ const MaterialCard: React.FC<MaterialCardProps> = ({ material, onDownload, forma
         </Button>
       ]}
       className="transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl cursor-pointer rounded-xl"
-      bodyStyle={{ padding: 20 }}
+      styles={{ body: { padding: 20 } }}
     >
       <div className="flex flex-wrap gap-2 mb-2">
         <Tag color={getFormatColor(material.format)}>{getFormatText(material.format)}</Tag>

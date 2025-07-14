@@ -37,7 +37,7 @@ const mockEvents: Event[] = [
     location: "Hà Nội",
     type: "offline",
     category: "Tiếng Anh",
-    image: "https://via.placeholder.com/300x200/1677ff/ffffff?text=English+Workshop",
+    image: "https://static.unica.vn/upload/images/2021/08/241(1200X628)_1629008928.jpg",
     description: "Thực hành giao tiếp tiếng Anh với người bản xứ, nâng cao phản xạ và kỹ năng nghe nói.",
     isFree: true,
     status: "upcoming"
@@ -58,7 +58,7 @@ const mockEvents: Event[] = [
     location: "Online",
     type: "online",
     category: "IELTS",
-    image: "https://via.placeholder.com/300x200/52c41a/ffffff?text=IELTS+Webinar",
+    image: "https://i.ytimg.com/vi/ZXCpp6nS9og/maxresdefault.jpg",
     description: "Chia sẻ kinh nghiệm luyện thi IELTS, chiến lược làm bài và giải đáp thắc mắc cùng chuyên gia.",
     isFree: false,
     status: "upcoming"
@@ -79,7 +79,7 @@ const mockEvents: Event[] = [
     location: "TP.HCM",
     type: "offline",
     category: "Tiếng Nhật",
-    image: "https://via.placeholder.com/300x200/fa8c16/ffffff?text=JLPT+Test",
+    image: "https://kosei.vn/Files/235/Download/su-kien/Thumb-Thi-thu-thang-9_23(1).png",
     description: "Cơ hội kiểm tra trình độ tiếng Nhật, làm quen với đề thi JLPT thực tế.",
     isFree: true,
     status: "upcoming"
@@ -100,7 +100,7 @@ const mockEvents: Event[] = [
     location: "Đà Nẵng",
     type: "offline",
     category: "Tiếng Hàn",
-    image: "https://via.placeholder.com/300x200/eb2f96/ffffff?text=Korean+Seminar",
+    image: "https://i.ytimg.com/vi/V68tsXFxOF0/maxresdefault.jpg",
     description: "Hội thảo chia sẻ kỹ năng giao tiếp tiếng Hàn trong môi trường công sở, thực hành hội thoại.",
     isFree: false,
     status: "upcoming"
@@ -121,7 +121,7 @@ const mockEvents: Event[] = [
     location: "Online",
     type: "online",
     category: "Tiếng Trung",
-    image: "https://via.placeholder.com/300x200/13c2c2/ffffff?text=Chinese+Meetup",
+    image: "https://saomaixkld.vn/upload/images/Chuong-trinh-dao-tao-tieng-trung-online-mien-phi.jpg",
     description: "Giao lưu, luyện nói tiếng Trung với chủ đề công việc, kinh doanh, thực hành hội thoại nhóm.",
     isFree: true,
     status: "upcoming"

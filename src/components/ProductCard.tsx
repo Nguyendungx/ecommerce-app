@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 import { Card, Button } from 'antd';
 import { HeartOutlined, HeartFilled } from '@ant-design/icons';
 import React from 'react';
-import Image from 'next/image';
 
 interface ProductCardProps {
   id: number;
@@ -32,19 +32,36 @@ const ProductCard: React.FC<ProductCardProps> = ({
         borderRadius: 18,
         boxShadow: '0 4px 24px 0 rgba(0,0,0,0.08)',
         transition: 'transform 0.2s, box-shadow 0.2s',
+        minHeight: 370, // Đảm bảo mọi card cao tối thiểu như nhau
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
       }}
-      styles={{ body: { padding: 18, minHeight: 180, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' } }}
+      styles={{
+        body: { padding: 18, minHeight: 180, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' },
+        cover: {
+          height: 180,
+          overflow: 'hidden',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: '#fff',
+        },
+      }}
       cover={
-        <Image
+        <img
           alt={name}
           src={image || "https://via.placeholder.com/280x180?text=No+Image"}
           width={280}
           height={180}
           style={{
             objectFit: 'cover',
+            width: '100%',
+            height: '180px',
             borderTopLeftRadius: 18,
             borderTopRightRadius: 18,
             transition: 'transform 0.2s',
+            display: 'block',
           }}
         />
       }
