@@ -5,6 +5,7 @@ import ProductList from "../../components/ProductList";
 import { Typography, message } from "antd";
 import { useSearchParams } from "next/navigation";
 import ProductDetailModal from "../../components/ProductDetailModal";
+import { Suspense } from "react";
 
 const { Title } = Typography;
 
@@ -18,7 +19,7 @@ type Product = {
   rating?: number;
 };
 
-export default function FavoritesPage() {
+function FavoritesContent() {
   const [products, setProducts] = useState<Product[]>([]);
   const [favorites, setFavorites] = useState<number[]>([]);
   const [modalOpen, setModalOpen] = useState(false);
@@ -92,5 +93,13 @@ export default function FavoritesPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function FavoritesPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <FavoritesContent />
+    </Suspense>
   );
 } 
