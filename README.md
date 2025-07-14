@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EduStore - Sàn thương mại các khoá học & tài liệu ngôn ngữ
 
-## Getting Started
+[![Vercel Deploy](https://vercel.com/button)](https://ecommerce-app-git-master-nguyen-hung-dungs-projects.vercel.app/)
 
-First, run the development server:
+**EduStore** là nền tảng thương mại điện tử cho các khoá học, tài liệu, sự kiện và bài viết về giáo dục/ngôn ngữ. Ứng dụng được xây dựng với Next.js 15, TypeScript, Ant Design, Tailwind CSS và triển khai trên Vercel.
+
+## 🚀 Demo
+
+Truy cập bản demo online tại:  
+👉 [https://ecommerce-app-git-master-nguyen-hung-dungs-projects.vercel.app/](https://ecommerce-app-git-master-nguyen-hung-dungs-projects.vercel.app/)
+
+---
+
+## 🛠️ Công nghệ sử dụng
+
+- [Next.js 15 (App Router)](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Ant Design v5](https://ant.design/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React](https://react.dev/)
+- [Vercel](https://vercel.com/) (deploy & hosting)
+- [Jest, React Testing Library] (unit test - nếu có)
+
+---
+
+## ⚡️ Tính năng nổi bật
+
+- Danh sách khoá học, tài liệu, sự kiện, bài viết
+- Lọc, tìm kiếm, gợi ý sản phẩm theo AI
+- Quản lý sản phẩm yêu thích, lịch sử xem
+- Xem chi tiết sản phẩm, modal popup
+- Chatbot AI tư vấn sản phẩm
+- Responsive, tối ưu cho mobile & desktop
+- Hỗ trợ SSR/SSG, tối ưu SEO
+
+---
+
+## 🏁 Hướng dẫn chạy dự án
+
+### 1. Cài đặt dependencies
+
+```bash
+npm install
+# hoặc
+yarn install
+```
+
+### 2. Chạy development server
 
 ```bash
 npm run dev
-# or
+# hoặc
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Truy cập [http://localhost:3000](http://localhost:3000) để xem ứng dụng.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Build production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🌐 Deploy trên Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Ứng dụng đã được deploy tại:  
+👉 [https://ecommerce-app-git-master-nguyen-hung-dungs-projects.vercel.app/](https://ecommerce-app-git-master-nguyen-hung-dungs-projects.vercel.app/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Bạn có thể fork repo và deploy lại trên Vercel chỉ với 1 click:  
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📂 Cấu trúc thư mục
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+  app/                # Next.js app directory (pages, layout, routing)
+  components/         # React components (ProductCard, ProductList, ...)
+  api/                # Mock API, data fetch
+  styles/             # Global styles, Tailwind config
+  ...
+```
+
+---
+
+## 📄 License
+
+MIT
+
+---
+
+> **EduStore** - Sàn thương mại các khoá học & tài liệu ngôn ngữ  
+> Made with by Nguyen Hung Dung
