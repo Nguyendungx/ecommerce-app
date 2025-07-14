@@ -163,7 +163,7 @@ export default function CoursesPage() {
                 </Button>
               ]}
               className="transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl cursor-pointer rounded-xl"
-              bodyStyle={{ padding: 20 }}
+              styles={{ body: { padding: 20 } }}
             >
               <div className="flex flex-wrap gap-2 mb-2">
                 <Tag color={getLevelColor(course.level)}>{getLevelText(course.level)}</Tag>
