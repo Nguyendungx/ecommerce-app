@@ -5,6 +5,7 @@ import { Card, Typography, Tag, Button, Input, Select, Rate, Space, Divider } fr
 import { SearchOutlined, ClockCircleOutlined, UserOutlined } from '@ant-design/icons';
 import { Spin } from 'antd';
 import mockCourses, { Course } from '../../api/mockCourses';
+import { useRouter } from 'next/navigation';
 
 const { Title, Text } = Typography;
 const { Search } = Input;
@@ -17,6 +18,7 @@ export default function CoursesPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedLevel, setSelectedLevel] = useState<string>('all');
+  const router = useRouter();
 
   const categories = ['all', 'Frontend', 'Backend', 'Data Science', 'DevOps', 'Mobile'];
   const levels = ['all', 'beginner', 'intermediate', 'advanced'];
@@ -137,6 +139,7 @@ export default function CoursesPage() {
             <Card
               key={course.id}
               hoverable
+              onClick={() => router.push(`/courses/${course.id}`)}
               cover={
                 <div className="relative">
                   <img
@@ -155,7 +158,7 @@ export default function CoursesPage() {
                 </div>
               }
               actions={[
-                <Button key="register" type="primary" size="large" block>
+                <Button key="register" type="primary" size="large" block onClick={e => { e.stopPropagation(); router.push(`/courses/${course.id}`); }}>
                   Đăng ký ngay
                 </Button>
               ]}
