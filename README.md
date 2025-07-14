@@ -51,13 +51,13 @@ Truy cập bản demo online tại:
 - Danh sách các khóa học
 - Lọc chi tiết khóa học
 - Chi tiết khóa học
-    2.1.Bài giảng
+    * 2.1.Bài giảng
     - Danh sách bài được sắp xếp theo menu
     - Xem bài giảng được lấy từ link Youtube nhằm giảm thiểu chi phí lưu trữ
     - Tạo Note tại ngay bài giảng (Hiện tại chưa sử lí được vấn đề thời gian ghi chú giống với thời gian xem video vì chưa thể sử dụng video trên Youtube)
     - Sử dụng MD Edittor để tạo Note
     - Tạo câu hỏi tại bài giảng (Tạo comment)
-    2.2.Menu Lesson
+    * 2.2.Menu Lesson
     - Danh sách các bài giảng được chia theo từng Chương
     - Khi xem xong sẽ đánh dấu đã xem
 
