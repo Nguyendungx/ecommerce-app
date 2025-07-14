@@ -47,7 +47,7 @@ const mockCourses: Course[] = [
         title: "Giới thiệu",
         lessons: [
           { id: 1, title: "ReactJS là gì? Tại sao nên học ReactJS?", videoUrl: "https://www.youtube.com/embed/ysz5S6PUM-U", duration: "10:41" },
-          { id: 2, title: "SPA/MPA là gì?", videoUrl: "https://www.youtube.com/embed/2Vv-BfVoq4g", duration: "22:20" },
+          { id: 2, title: "SPA/MPA là gì?", videoUrl: "https://www.youtube.com/embed/2Vv-BfVoq4g/?enablejsapi=1", duration: "22:20" },
           { id: 3, title: "Ưu điểm của SPA", videoUrl: "https://www.youtube.com/embed/JGwWNGJdvx8", duration: "00:14" }
         ]
       },
