@@ -2,6 +2,8 @@
 
 [![Vercel Deploy](https://vercel.com/button)](https://ecommerce-app-git-master-nguyen-hung-dungs-projects.vercel.app/)
 
+👉 Backend đang tạo: https://github.com/Nguyendungx/Backend_Ecom.git
+
 **EduStore** là nền tảng thương mại điện tử cho các khoá học, tài liệu, sự kiện và bài viết về giáo dục/ngôn ngữ. Ứng dụng được xây dựng với Next.js 15, TypeScript, Ant Design, Tailwind CSS và triển khai trên Vercel.
 
 ## 🚀 Demo
