@@ -6,13 +6,15 @@ import {
   FileTextOutlined, 
   CalendarOutlined,
   ShoppingCartOutlined,
-  HeartOutlined
+  HeartOutlined,
+  TeamOutlined
 } from '@ant-design/icons';
 import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 
 const { Header: AntHeader } = Layout;
 const { useBreakpoint } = Grid;
+
 
 const Header: React.FC = () => {
   const router = useRouter();
@@ -66,8 +68,11 @@ const Header: React.FC = () => {
       icon: <HeartOutlined />,
     },
     {
-      type: 'divider' as const,
+      key: 'chat-admin',
+      label: 'Nhắn cho admin',
+      icon: <TeamOutlined />,
     },
+
     {
       key: 'logout',
       label: 'Đăng xuất',
@@ -90,6 +95,9 @@ const Header: React.FC = () => {
         break;
       case 'favorites':
         router.push('/favorites');
+        break;
+      case 'chat-admin':
+        router.push('/chat-admin');
         break;
       case 'logout':
         // Xử lý đăng xuất
